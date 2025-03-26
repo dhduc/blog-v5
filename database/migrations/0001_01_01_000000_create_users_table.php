@@ -11,9 +11,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('github_login');
+            $table->string('github_login')->nullable();
             $table->string('avatar')->nullable();
-            $table->json('github_data');
+            $table->json('github_data')->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->rememberToken();
