@@ -9,6 +9,6 @@
     </div>
 
     <div class="font-medium tracking-tighter sr-only sm:not-sr-only sm:text-lg md:text-xl">
-        benjamincrozat.com
+        airdroptoday.info
     </div>
 </a>

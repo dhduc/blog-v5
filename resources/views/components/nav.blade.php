@@ -34,7 +34,7 @@
             <x-heroicon-o-fire class="mx-auto size-6 md:size-7" />
         @endif
 
-        Latest
+        Bài viết
     </a>
 
     <a
@@ -51,7 +51,7 @@
             <x-heroicon-o-link class="mx-auto size-6 md:size-7" />
         @endif
 
-        Links
+        Dự án
     </a>
 
     @auth

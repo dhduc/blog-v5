@@ -1,23 +1,23 @@
 <x-app>
     <div class="container mt-8 text-center">
         <div class="font-bold tracking-tight text-black text-4xl/none md:text-5xl lg:text-7xl text-balance">
-            <span class="text-blue-600">{{ Number::format($visitors) }}</span> monthly visitors read my blog
+            Mang đến cho bạn những airdrops mới mẻ
         </div>
 
         <div class="mt-5 leading-tight text-black/75 text-lg/tight sm:text-xl/tight md:text-2xl/tight md:mt-8 lg:text-3xl text-balance">
-            No matter how senior you are, I have something for you. Ready?
+            Khám phá tiền điện tử mới airdrops và tìm hiểu cách tham gia bằng hướng dẫn dễ làm theo.
         </div>
 
         <div class="flex items-center justify-center gap-2 text-center mt-7 md:mt-11">
-            <x-btn href="#about">
+           <!--  <x-btn href="#about">
                 Who the F are you?
             </x-btn>
-
+ -->
             <x-btn
                 primary
                 href="#latest"
             >
-                Start reading
+                View all airdrops
             </x-btn>
         </div>
     </div>
