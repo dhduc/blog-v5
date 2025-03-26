@@ -4,7 +4,7 @@
     :image="$post['image']"
     :title="$post['title']"
 >
-    <x-breadcrumbs class="container mt-12 md:mt-16 xl:max-w-screen-lg">
+    <x-breadcrumbs class="container mt-6 md:mt-8 xl:max-w-screen-lg">
         <x-breadcrumbs.item href="{{ route('posts.index') }}">
             Bài viết
         </x-breadcrumbs.item>
@@ -14,7 +14,7 @@
         </x-breadcrumbs.item>
     </x-breadcrumbs>
 
-    <article class="mt-12 md:mt-16">
+    <article class="mt-6 md:mt-8">
         <div class="container break-all lg:max-w-screen-md">
             @if ($post['image'])
                 <img src="{{ $post['image'] }}" alt="{{ $post['title']  }}" class="object-cover w-full shadow-xl ring-1 ring-black/5 rounded-xl aspect-video" />
@@ -35,7 +35,7 @@
             {{ $post['title'] }}
         </h1>
 
-        <div class="container mt-12 md:mt-16 lg:max-w-screen-md">
+        <div class="container mt-6 md:mt-8 lg:max-w-screen-md">
             
 
             <x-table-of-contents
@@ -56,20 +56,20 @@
         <div class="grid grid-cols-2 gap-4 leading-tight md:grid-cols-3">
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
                     <x-heroicon-o-calendar class="mx-auto mb-1 opacity-75 size-6" />
-                    {{ $post['modified_at'] ? 'Modified' : 'Published' }}<br />
+                    {{ $post['modified_at'] ? 'Cập nhật' : 'Ngày đăng' }}<br />
                     {{ ($post['modified_at'] ?? $post['published_at'])->isoFormat('ll') }}
                 </div>
 
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
                     <x-heroicon-o-user class="mx-auto mb-1 opacity-75 size-6" />
-                    Written by<br />
+                    Viết bởi<br />
                     AirdropToday
                 </div>
 
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
                     <x-heroicon-o-clock class="mx-auto mb-1 opacity-75 size-6" />
-                    {{ $readTime ?? 0 }} minutes<br />
-                    read
+                    {{ $readTime ?? 0 }} phút<br />
+                    đọc 
                 </div>
             </div>
     </x-section>

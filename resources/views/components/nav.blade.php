@@ -54,51 +54,6 @@
         Dự án
     </a>
 
-    @auth
-        <x-dropdown>
-            <x-slot:btn>
-                <x-heroicon-o-user class="mx-auto size-6 md:size-7" />
-                Account
-            </x-slot>
-
-            <x-slot:items>
-                <div class="flex items-center gap-3 px-4 py-2">
-                    <img
-                        src="{{ auth()->user()->avatar }}"
-                        alt="{{ auth()->user()->name }}'s GitHub avatar"
-                        class="rounded-full size-6 md:size-8"
-                    />
-
-                    {{ auth()->user()->name }}
-                </div>
-
-                <x-dropdown.divider />
-
-                <x-dropdown.item href="https://github.com/settings" target="_blank">
-                    <x-heroicon-o-arrow-top-right-on-square class="size-4" />
-                    Manage on GitHub
-                </x-dropdown.item>
-
-                <x-dropdown.item destructive form="logout-form">
-                    <x-heroicon-o-arrow-right-end-on-rectangle class="size-4" />
-                    Log out
-                </x-dropdown.item>
-
-                <form method="POST" action="{{ route('auth.logout') }}" id="logout-form" class="hidden">
-                    @csrf
-                </form>
-            </x-slot>
-        </x-dropdown>
-    @else
-        <a
-            href="{{ route('auth.redirect') }}"
-            class="transition-colors hover:text-blue-600"
-        >
-            <x-iconoir-github class="mx-auto size-6 md:size-7" />
-            Sign in
-        </a>
-    @endauth
-
     <x-dropdown>
         <x-slot:btn>
             <x-heroicon-o-ellipsis-horizontal
@@ -114,28 +69,18 @@
                 About me
             </x-dropdown.item>
 
-            <x-dropdown.item href="https://github.com/benjamincrozat/blog-v5" target="_blank">
-                <x-iconoir-git-fork class="size-4" />
-                Fork the source code
-            </x-dropdown.item>
-
             <x-dropdown.divider>
                 Follow me
             </x-dropdown.divider>
 
-            <x-dropdown.item href="https://github.com/benjamincrozat" target="_blank">
-                <x-iconoir-github class="size-4" />
-                GitHub
-            </x-dropdown.item>
-
             <x-dropdown.item href="https://www.linkedin.com/in/benjamincrozat" target="_blank">
-                <x-iconoir-linkedin class="size-4" />
-                LinkedIn
+                <x-iconoir-facebook class="size-4" />
+                Facebook
             </x-dropdown.item>
 
             <x-dropdown.item href="https://x.com/benjamincrozat" target="_blank">
                 <x-iconoir-x class="size-4" />
-                X
+                X (Twitter)
             </x-dropdown.item>
         </x-slot>
     </x-dropdown>
