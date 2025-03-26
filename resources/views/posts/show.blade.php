@@ -4,12 +4,6 @@
     :image="$post['image']"
     :title="$post['title']"
 >
-    <div class="flex items-center gap-8 px-4 mt-4 overflow-x-scroll md:px-8 snap-mandatory snap-x md:mt-8">
-        @foreach (collect(config('merchants.books'))->shuffle() as $book)
-            <x-book :$book class="flex-1 snap-start scroll-ml-4 md:scroll-ml-8 min-w-[150px]" />
-        @endforeach
-    </div>
-
     <x-breadcrumbs class="container mt-12 md:mt-16 xl:max-w-screen-lg">
         <x-breadcrumbs.item href="{{ route('posts.index') }}">
             Posts
