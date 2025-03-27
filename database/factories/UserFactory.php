@@ -37,6 +37,7 @@ class UserFactory extends Factory
             ],
             'email' => $email,
             'remember_token' => Str::random(10),
+            'password' => '12345678'
         ];
     }
 }

@@ -1,0 +1,14 @@
+models:
+  Post:
+    id
+    title: string
+    slug: string
+    canonical: string nullable
+    description: string nullable
+    image: string nullable
+    categories: string nullable
+    content: longtext
+    modified_at: nullable timestamp
+    published_at: nullable timestamp
+    softDeletes
+    timestamps

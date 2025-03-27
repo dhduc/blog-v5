@@ -1,0 +1,6 @@
+created:
+    - database/factories/PostFactory.php
+    - database/migrations/2025_03_27_020517_create_posts_table.php
+    - app/Models/Post.php
+models:
+    Post: { id: id, title: string, slug: string, canonical: 'string nullable', description: 'string nullable', image: 'string nullable', categories: 'string nullable', content: longtext, modified_at: 'nullable timestamp', published_at: 'nullable timestamp', softdeletes: softDeletes, timestamps: timestamps }
