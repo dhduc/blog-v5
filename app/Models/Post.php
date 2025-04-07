@@ -4,37 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Spatie\Tags\HasTags;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use HasTags;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * @var string
      */
-    protected $fillable = [
-        'title',
-        'slug',
-        'canonical',
-        'description',
-        'image',
-        'categories',
-        'content',
-        'modified_at',
-        'published_at',
-    ];
+    protected $table = 'posts';
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
-        'id' => 'integer',
-        'modified_at' => 'timestamp',
-        'published_at' => 'timestamp',
+        'published_at' => 'date',
     ];
+
+    /** @return BelongsTo<Category,self> */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }

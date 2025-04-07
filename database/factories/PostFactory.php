@@ -2,34 +2,27 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Post;
 
 class PostFactory extends Factory
 {
+
     /**
-     * The name of the factory's corresponding model.
-     *
      * @var string
      */
     protected $model = Post::class;
 
-    /**
-     * Define the model's default state.
-     */
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(4),
-            'slug' => fake()->slug(),
-            'canonical' => fake()->word(),
-            'description' => fake()->text(),
-            'image' => fake()->word(),
-            'categories' => fake()->word(),
-            'content' => fake()->paragraphs(3, true),
-            'modified_at' => fake()->dateTime(),
-            'published_at' => fake()->dateTime(),
+            'title' => $title = $this->faker->unique()->sentence(4),
+            'slug' => Str::slug($title),
+            'content' => $this->faker->realText(),
+            'published_at' => $this->faker->dateTimeBetween('-6 month', '+1 month'),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
+            'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
         ];
     }
 }

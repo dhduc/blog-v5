@@ -4,11 +4,10 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
 use App\Models\Post;
-use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Contracts\Support\Htmlable;
 
-class EditPost extends EditRecord
+class ViewPost extends ViewRecord
 {
     protected static string $resource = PostResource::class;
 
@@ -22,8 +21,6 @@ class EditPost extends EditRecord
 
     protected function getActions(): array
     {
-        return [
-            Actions\DeleteAction::make(),
-        ];
+        return [];
     }
 }
