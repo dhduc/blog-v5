@@ -41,7 +41,7 @@
     <body {{ $attributes->class('font-light text-gray-600') }}>
         <div class="flex flex-col min-h-screen">
             @empty($hideNavigation)
-                <header class="container mt-4 xl:max-w-screen-lg">
+                <header class="container mt-4 max-w-screen-xl">
                     <x-nav />
                 </header>
             @endempty
@@ -49,7 +49,8 @@
             <main @class([
                 'flex-grow',
                 'mt-8' => empty($hideNavigation),
-            ])>
+                'max-w-screen-xl'
+            ]) style="margin: 0 auto">
                 {{ $slot }}
             </main>
 

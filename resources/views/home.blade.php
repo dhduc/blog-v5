@@ -1,23 +1,22 @@
 <x-app>
     <div class="container mt-8 text-center">
         <div class="font-bold tracking-tight text-black text-4xl/none md:text-5xl lg:text-7xl text-balance">
-            Mang đến cho bạn những airdrops mới mẻ
+            AWS for PHP developers
         </div>
 
-        <div class="mt-5 leading-tight text-black/75 text-lg/tight sm:text-xl/tight md:text-2xl/tight md:mt-8 lg:text-3xl text-balance">
-            Khám phá tiền điện tử mới airdrops và tìm hiểu cách tham gia bằng hướng dẫn dễ làm theo.
+        <div class="max-w-screen-xl mt-5 leading-tight text-black/75 text-lg/tight sm:text-xl/tight md:text-2xl/tight md:mt-8 lg:text-3xl text-balance">
+            Learn enough AWS knowledge and skills for PHP professtional projects
         </div>
 
         <div class="flex items-center justify-center gap-2 text-center mt-7 md:mt-11">
-           <!--  <x-btn href="#about">
+            <x-btn href="#about">
                 Who the F are you?
             </x-btn>
- -->
             <x-btn
                 primary
                 href="#latest"
             >
-                View all airdrops
+                View all articles
             </x-btn>
         </div>
     </div>
@@ -49,7 +48,7 @@
 
     <x-section title="Bài viết mới nhất" id="latest" class="mt-16 md:mt-20">
         @if ($latest->isNotEmpty())
-            <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-2 xl:grid-cols-2">
+            <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-3 xl:grid-cols-3">
                 @foreach ($latest as $post)
                     <li>
                         <x-post :$post />
@@ -69,7 +68,7 @@
         </div>
     </x-section>
 
-    <x-section title="Giới thiệu Airdrop Today" id="about" class="mt-16 lg:max-w-screen-md md:mt-20">
+    <x-section title="Giới thiệu Airdrop Today" id="about" class="mt-16 lg:max-w-screen-lg md:mt-20">
         <x-prose class="mt-8">
             <img
                 src="https://www.gravatar.com/avatar/d58b99650fe5d74abeb9d9dad5da55ad?s=256"
