@@ -23,11 +23,13 @@ class HomeController extends Controller
         $key = "latest_posts_$timestamp";
 
         $latest = cache()->rememberForever($key, function () {
-            return Post::select('*')
-                ->limit(12)
-                ->get()
-                ->toArray();
+            $posts = Post::select('*')
+                ->paginate(12);
+            return $posts;
         });
+
+        $latest = Post::select('*')
+            ->paginate(12);
 
         return view('home', compact('latest'));
     }

@@ -1,10 +1,9 @@
 <x-app
-    :canonical="$post['canonical']"
-    :description="$post['description']"
+    :description="$post['desc']"
     :image="$post['image']"
     :title="$post['title']"
 >
-    <x-breadcrumbs class="container mt-6 md:mt-8 xl:max-w-screen-lg">
+    <x-breadcrumbs class="container mt-6 md:mt-8">
         <x-breadcrumbs.item href="{{ route('posts.index') }}">
             Bài viết
         </x-breadcrumbs.item>
@@ -15,12 +14,6 @@
     </x-breadcrumbs>
 
     <article class="mt-6 md:mt-8">
-        <div class="container break-all lg:max-w-screen-md">
-            @if ($post['image'])
-                <img src="{{ $post['image'] }}" alt="{{ $post['title']  }}" class="object-cover w-full shadow-xl ring-1 ring-black/5 rounded-xl aspect-video" />
-            @endif
-        </div>
-
         @if (! empty($post['categories']))
             <div class="flex justify-center gap-2 mt-12 md:mt-16">
                 @foreach ($post['categories'] as $category)
@@ -36,7 +29,7 @@
         </h1>
 
         <div class="container mt-6 md:mt-8 lg:max-w-screen-md">
-            
+
 
             <x-table-of-contents
                 :headings="extract_headings_from_markdown($post['content'])"
@@ -57,7 +50,7 @@
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
                     <x-heroicon-o-calendar class="mx-auto mb-1 opacity-75 size-6" />
                     {{ $post['modified_at'] ? 'Cập nhật' : 'Ngày đăng' }}<br />
-                    {{ ($post['modified_at'] ?? $post['published_at'])->isoFormat('ll') }}
+                    {{ Date::createFromTimestamp($post['modified_at'] ?? $post['published_at'])->isoFormat('ll') }}
                 </div>
 
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
@@ -69,7 +62,7 @@
                 <div class="flex-1 p-3 text-center rounded-lg bg-gray-50">
                     <x-heroicon-o-clock class="mx-auto mb-1 opacity-75 size-6" />
                     {{ $readTime ?? 0 }} phút<br />
-                    đọc 
+                    đọc
                 </div>
             </div>
     </x-section>
@@ -84,10 +77,10 @@
                 "url": "{{ route('home') }}#about"
             },
             "headline": "{{ $post['title'] }}",
-            "description": "{{ $post['description'] }}",
+            "description": "{{ $post['desc'] }}",
             "image": "{{ $post['image'] }}",
-            "datePublished": "{{ $post['published_at']->toIso8601String() }}",
-            "dateModified": "{{ $post['modified_at']?->toIso8601String() ?? $post['published_at']->toIso8601String() }}"
+            "datePublished": "{{ Date::createFromTimestamp($post['published_at'])->toIso8601String() }}",
+            "dateModified": "{{ Date::createFromTimestamp($post['modified_at']?->toIso8601String() ?? $post['published_at'])->toIso8601String() }}"
         }
     </script>
 </x-app>

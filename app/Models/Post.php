@@ -18,11 +18,20 @@ class Post extends Model
      */
     protected $table = 'posts';
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'desc',
+        'content',
+        'category_id'
+    ];
+
     /**
      * @var array<string, string>
      */
     protected $casts = [
         'published_at' => 'date',
+        'modified_at' => 'date',
     ];
 
     /** @return BelongsTo<Category,self> */

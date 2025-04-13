@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('desc')->nullable();
             $table->longText('content');
+            $table->date('modified_at')->nullable();
             $table->date('published_at')->nullable();
             $table->string('seo_title', 60)->nullable();
             $table->string('seo_description', 160)->nullable();

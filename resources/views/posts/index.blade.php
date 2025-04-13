@@ -1,9 +1,9 @@
 <x-app>
-    <x-breadcrumbs class="container xl:max-w-screen-lg">
-        <x-breadcrumbs.item>
-            Posts
-        </x-breadcrumbs.item>
-    </x-breadcrumbs>
+    <div class="container mt-16 mb-10 text-center text-black">
+        <h1 class="font-bold tracking-tight text-black md:text-3xl lg:text-5xl text-balance">
+            <span class="text-blue-600">Cập nhật</span> từ cộng đồng
+        </h1>
+    </div>
 
     <x-section :title="$posts->currentPage() > 1 ? 'Page ' . $posts->currentPage() : 'Latest posts'" class="mt-8">
         @if ($posts->isNotEmpty())

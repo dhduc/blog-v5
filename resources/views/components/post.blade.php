@@ -31,6 +31,6 @@
     </div>
 
     <div class="flex-grow mt-4 font-bold">
-        Ngày đăng: {{ ($post['modified_at'] ?? $post['published_at']) }}
+        Ngày đăng: {{ ($post['modified_at'] ?? $post['published_at'])->isoFormat('ll') }}
     </div>
 </div>

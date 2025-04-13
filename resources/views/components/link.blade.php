@@ -3,7 +3,7 @@
 <div {{ $attributes }}>
     <a href="{{ $link->url }}" target="_blank">
         @if ($link->image_url)
-            <img src="{{ $link->image_url }}" alt="{{ $link->title  }}" class="object-cover transition-opacity shadow-md shadow-black/5 rounded-xl aspect-video hover:opacity-50 ring-1 ring-black/5" />
+            <img src="{{ asset('storage/' . $link->image_url) }}" alt="{{ $link->title  }}" class="object-cover transition-opacity shadow-md shadow-black/5 rounded-xl aspect-video hover:opacity-50 ring-1 ring-black/5" />
         @else
             @php
             $bgColors = collect([

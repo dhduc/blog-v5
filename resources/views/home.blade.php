@@ -44,6 +44,9 @@
                 />
             </a>
         </div>
+        <div class="text-center sm:text-xl mt-7">
+            If you like my blog, please check out these development/education-centric products that will help you as a developer without a doubt.
+        </div>
     </x-section>
 
     <x-section title="Bài viết mới nhất" id="latest" class="mt-16 md:mt-20">

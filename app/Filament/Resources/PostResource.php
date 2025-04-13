@@ -70,6 +70,9 @@ class PostResource extends Resource
                         Forms\Components\DatePicker::make('published_at')
                             ->label('Published Date'),
 
+                        Forms\Components\DatePicker::make('modified_at')
+                            ->label('Modified Date'),
+
                         SpatieTagsInput::make('tags'),
                     ])
                     ->columns(2),
@@ -125,27 +128,18 @@ class PostResource extends Resource
                     ->form([
                         Forms\Components\DatePicker::make('published_from')
                             ->placeholder(fn ($state): string => 'Dec 18, ' . now()->subYear()->format('Y')),
-                        Forms\Components\DatePicker::make('published_until')
-                            ->placeholder(fn ($state): string => now()->format('M d, Y')),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         return $query
                             ->when(
                                 $data['published_from'] ?? null,
                                 fn (Builder $query, $date): Builder => $query->whereDate('published_at', '>=', $date),
-                            )
-                            ->when(
-                                $data['published_until'] ?? null,
-                                fn (Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
                             );
                     })
                     ->indicateUsing(function (array $data): array {
                         $indicators = [];
                         if ($data['published_from'] ?? null) {
                             $indicators['published_from'] = 'Published from ' . Carbon::parse($data['published_from'])->toFormattedDateString();
-                        }
-                        if ($data['published_until'] ?? null) {
-                            $indicators['published_until'] = 'Published until ' . Carbon::parse($data['published_until'])->toFormattedDateString();
                         }
 
                         return $indicators;
