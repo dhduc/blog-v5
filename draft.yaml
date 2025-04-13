@@ -1,14 +1,21 @@
 models:
-  Post:
-    id
-    title: string
-    slug: string
-    canonical: string nullable
-    description: string nullable
-    image: string nullable
-    categories: string nullable
-    content: longtext
-    modified_at: nullable timestamp
-    published_at: nullable timestamp
-    softDeletes
-    timestamps
+  Book:
+    title: string:255
+    subtitle: string:255 nullable
+    heading: string:255 nullable
+    cover_image: string:255 nullable
+    content_image: string:255 nullable
+    price: string:255 nullable
+    sale_price: string:255 nullable
+    desc: text nullable
+    chapters: json nullable
+    reviews: json nullable
+    author: string:255 nullable
+    job_title: string:255 nullable
+    author_avatar: string:255 nullable
+    author_desc: text nullable
+    phone: string:255 nullable
+    email: string:255 nullable
+    location: string:255 nullable
+    footer_desc: text nullable
+

@@ -52,6 +52,9 @@ class PostResource extends Resource
                             ->required()
                             ->maxLength(255)
                             ->unique(Post::class, 'slug', ignoreRecord: true),
+                        Forms\Components\TextInput::make('desc')
+                            ->required()
+                            ->columnSpan('full'),
 
                         Forms\Components\MarkdownEditor::make('content')
                             ->required()
@@ -97,7 +100,7 @@ class PostResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
-                
+
 
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
@@ -115,7 +118,7 @@ class PostResource extends Resource
                     ->label('Published Date')
                     ->date(),
 
-                
+
             ])
             ->filters([
                 Tables\Filters\Filter::make('published_at')
@@ -177,6 +180,7 @@ class PostResource extends Resource
                                 ->schema([
                                     Components\Group::make([
                                         Components\TextEntry::make('title'),
+                                        Components\TextEntry::make('desc'),
                                         Components\TextEntry::make('slug'),
                                         Components\TextEntry::make('published_at')
                                             ->badge()

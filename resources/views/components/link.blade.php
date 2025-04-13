@@ -15,6 +15,18 @@
         @endif
     </a>
 
+    <div class="mt-4">
+        <time datetime="{{ $link->is_approved }}">
+            {{ $link->is_approved }}
+        </time>
+
+        <span class="inline-block mx-2 text-xs -translate-y-px opacity-50">•</span>
+
+        <a href="{{ $link->url }}" target="_blank" class="text-black underline underline-offset-4 decoration-black/30">
+            {{ $link->user }}
+        </a>
+    </div>
+
     <div class="flex items-center justify-between gap-6 mt-2">
         <a href="{{ $link->url }}" target="_blank" class="font-bold transition-colors text-xl/tight hover:text-blue-600">
             {{ $link->title }}

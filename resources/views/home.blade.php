@@ -47,15 +47,13 @@
     </x-section>
 
     <x-section title="Bài viết mới nhất" id="latest" class="mt-16 md:mt-20">
-        @if ($latest->isNotEmpty())
-            <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-3 xl:grid-cols-3">
-                @foreach ($latest as $post)
-                    <li>
-                        <x-post :$post />
-                    </li>
-                @endforeach
-            </ul>
-        @endif
+        <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-3 xl:grid-cols-3">
+            @foreach ($latest as $post)
+                <li>
+                    <x-post :$post />
+                </li>
+            @endforeach
+        </ul>
 
         <div class="mt-16 text-center">
             <x-btn

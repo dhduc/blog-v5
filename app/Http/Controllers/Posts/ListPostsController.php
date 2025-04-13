@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Posts;
 
+use App\Models\Post;
 use Illuminate\View\View;
 use App\Actions\Posts\ParsePost;
 use App\Actions\Posts\ExpandPost;
@@ -27,13 +28,12 @@ class ListPostsController extends Controller
             fn () => app(FetchPosts::class)
                 ->fetch()
                 ->map(function (SplFileInfo $file) {
-                    return app(ExpandPost::class)->expand(
-                        app(ParsePost::class)->parse($file)
-                    );
+
                 })
                 ->sortByDesc('published_at')
-        )
-            ->paginate(24);
+        );
+        $posts = Post::select('*')
+            ->paginate(12);
 
         return view('posts.index', compact('posts'));
     }

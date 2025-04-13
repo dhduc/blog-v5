@@ -10,7 +10,7 @@ class ExpandPost
 {
     public function expand(array $post) : array
     {
-        $post['categories'] = DB::table('category_post')
+        $post['categories'] = DB::table('categories')
             ->where('post_slug', $post['slug'])
             ->pluck('category_id')
             ->map(fn (int $id) => Category::query()->find($id))

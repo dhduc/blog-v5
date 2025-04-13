@@ -18,7 +18,7 @@
 
     <x-section :title="$links->currentPage() > 1 ? 'Page ' . $links->currentPage() : 'Dự án mới nhất'">
         @if ($links->isNotEmpty())
-            <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-2 xl:grid-cols-2">
+            <ul class="grid gap-10 mt-8 gap-y-16 xl:gap-x-16 md:grid-cols-3 xl:grid-cols-3">
                 @foreach ($links as $link)
                     <li>
                         <x-link :$link />

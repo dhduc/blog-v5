@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Post;
 use Illuminate\View\View;
 use App\Actions\Posts\ParsePost;
 use App\Actions\Posts\FetchPosts;
@@ -22,11 +23,10 @@ class HomeController extends Controller
         $key = "latest_posts_$timestamp";
 
         $latest = cache()->rememberForever($key, function () {
-            return app(FetchPosts::class)
-                ->fetch()
-                ->map(app(ParsePost::class)->parse(...))
-                ->sortByDesc('published_at')
-                ->take(12);
+            return Post::select('*')
+                ->limit(12)
+                ->get()
+                ->toArray();
         });
 
         return view('home', compact('latest'));
