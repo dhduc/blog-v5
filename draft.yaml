@@ -18,4 +18,15 @@ models:
     email: string:255 nullable
     location: string:255 nullable
     footer_desc: text nullable
-
+  Chapter:
+    title: string:255
+    desc: text nullable
+  Lesson:
+    title: string:255
+    slug: string:255
+    image: string:255
+    screencast: string:255
+    outcome: text nullable
+    requirement: text nullable
+    desc: text nullable
+    content: longText nullable
