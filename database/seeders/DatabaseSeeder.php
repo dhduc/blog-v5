@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Filament\Pages\Navigation;
 use App\Models\Category;
 use App\Str;
 use App\Models\Link;
@@ -9,6 +10,7 @@ use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Database\Seeder;
 use App\Actions\Posts\FetchPosts;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\Finder\SplFileInfo;
 use Illuminate\Database\Eloquent\Collection;
 use Symfony\Component\Console\Helper\ProgressBar;
@@ -30,6 +32,8 @@ class DatabaseSeeder extends Seeder
 
 Vui lòng không copy, sao chép nội dung của các bài viết dưới mọi hình thức."
         ]);
+
+        DB::table('navigations')->insert(config('site.nav'));
 
         // Blog
         $this->command->warn(PHP_EOL . 'Creating blog categories...');

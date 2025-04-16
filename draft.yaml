@@ -1,3 +1,5 @@
 models:
-  Site:
-    menu: text nullable
+  Navigation:
+    icon: string:255 nullable
+    text: string:255
+    url: string:255
