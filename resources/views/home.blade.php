@@ -77,13 +77,7 @@
                 class="float-right mt-4 ml-4 !rounded-full size-28 md:size-32"
             />
 
-            {!! Str::markdown(<<<MARKDOWN
-Hi! I'm from the South of France and I've been a self-taught web developer since 2006. When I started learning PHP and JavaScript, PHP 4 was still widely used, Internet Explorer 6 ruled the world, and we used DHTML to add falling snow on websites.
-
-Để ủng hộ blog ra các bài viết tốt nhất, hãy sử dụng link giới thiệu của tác giả trong các bài viết, đây là cách giúp tác giả có thêm động lực viết bài.
-
-Vui lòng không copy, sao chép nội dung của các bài viết dưới mọi hình thức.
-MARKDOWN) !!}
+            {!! Str::markdown(auth()->user()->about ?? '') !!}
         </x-prose>
     </x-section>
 </x-app>

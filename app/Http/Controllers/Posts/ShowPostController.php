@@ -12,7 +12,11 @@ class ShowPostController extends Controller
 {
     public function __invoke(string $slug) : View
     {
-        $post = Post::where('slug', $slug)->first()->toArray();
+        $post = Post::where('slug', $slug)->first();
+        if (! $post->published_at?->isPast()) {
+            abort(404);
+        }
+        $post = $post->load('category')->toArray();
 
         $readTime = ceil(str_word_count($post['content']) / 200);
 

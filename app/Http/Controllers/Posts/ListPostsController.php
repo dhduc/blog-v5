@@ -33,6 +33,8 @@ class ListPostsController extends Controller
                 ->sortByDesc('published_at')
         );
         $posts = Post::select('*')
+            ->published()
+            ->with(['category'])
             ->paginate(12);
 
         return view('posts.index', compact('posts'));

@@ -39,4 +39,9 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function scopePublished($query)
+    {
+        return $query->whereDate('published_at', '<=', now()->format('Y-m-d'));
+    }
 }

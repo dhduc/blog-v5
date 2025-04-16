@@ -39,7 +39,7 @@ class Simple extends Page
 
     protected static ?string $navigationLabel = 'Simple';
 
-    protected static ?string $navigationGroup = 'Page';
+    protected static ?string $navigationGroup = 'Others';
 
     protected static ?string $slug = 'page/simple';
 
@@ -69,18 +69,6 @@ class Simple extends Page
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('delete')
-                ->color('danger')
-                ->requiresConfirmation()
-                ->action(fn () => $this->record->delete()),
-            Action::make('reset')
-                ->button()
-                ->outlined()
-                ->action(function () {
-                    //$this->form->fill();
-                    $this->fillForm();
-                })
-            
         ];
     }
 
@@ -154,9 +142,13 @@ class Simple extends Page
                 Group::make()
                 ->schema([
                     TextInput::make('name')
-                        ->placeholder(__('Enter your name'))
+                        ->placeholder(__('Your name'))
                         ->required(),
-                    
+                    MarkdownEditor::make('about')
+                        ->placeholder(__('About me'))
+                        ->columnSpanFull()
+                        ->required(false),
+
                 ])->columns(2),
             ])->columns(1);
     }

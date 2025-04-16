@@ -17,7 +17,7 @@ class LinkResource extends Resource
 {
     protected static ?string $model = Link::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-link';
 
     public static function form(Form $form): Form
     {
@@ -36,6 +36,10 @@ class LinkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
+                Forms\Components\Toggle::make('is_sponsored')
+                    ->label('Sponsored')
+                    ->helperText('Is sponsored post'),
+
                 Forms\Components\DateTimePicker::make('is_approved'),
                 Forms\Components\DateTimePicker::make('is_declined'),
             ]);
@@ -52,6 +56,8 @@ class LinkResource extends Resource
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\IconColumn::make('is_sponsored')
+                    ->label('Sponsored'),
                 Tables\Columns\TextColumn::make('is_approved')
                     ->dateTime()
                     ->sortable(),

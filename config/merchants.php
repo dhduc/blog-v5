@@ -26,24 +26,6 @@ return [
             'link' => 'https://shrutibalasa.gumroad.com/l/level-up-with-tailwind-css?a=266251475',
             'image' => 'resources/img/books/level-up-tailwind-css.jpg',
         ],
-        [
-            'name' => 'Mastering Laravel Validation Rules',
-            'author' => 'Aaron Saray / Joel Clermont',
-            'link' => 'https://nocompromises.gumroad.com/l/laravel-validation?a=266251475',
-            'image' => 'resources/img/books/mastering-laravel-validation.jpg',
-        ],
-        [
-            'name' => 'Microservices with Laravel',
-            'author' => 'Martin Joo',
-            'link' => 'https://martinjoo.gumroad.com/l/microservices-with-laravel-premium?a=266251475',
-            'image' => 'resources/img/books/microservices-laravel.jpg',
-        ],
-        [
-            'name' => 'Vue.js Design Patterns',
-            'author' => 'Lachlan Miller',
-            'link' => 'https://lachlanmiller.gumroad.com/l/vuejs-design-patterns?a=266251475',
-            'image' => 'resources/img/books/vue-design-patterns.jpg',
-        ],
     ],
 
     'courses' => [

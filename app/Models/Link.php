@@ -18,12 +18,14 @@ class Link extends Model
         'image_url',
         'title',
         'description',
+        'is_sponsored',
         'is_approved',
     ];
 
     protected function casts() : array
     {
         return [
+            'is_sponsored' => 'boolean',
             'is_approved' => 'datetime',
             'is_declined' => 'datetime',
         ];

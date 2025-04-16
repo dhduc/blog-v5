@@ -23,7 +23,7 @@ class CategoryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-bookmark';
 
     protected static ?int $navigationSort = 1;
 
@@ -46,10 +46,6 @@ class CategoryResource extends Resource
 
                 Forms\Components\MarkdownEditor::make('description')
                     ->columnSpan('full'),
-
-                Forms\Components\Toggle::make('is_visible')
-                    ->label('Visible to users.')
-                    ->default(true),
             ]);
     }
 
@@ -63,8 +59,6 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\IconColumn::make('is_visible')
-                    ->label('Visibility'),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Last Updated')
                     ->date(),
@@ -95,8 +89,6 @@ class CategoryResource extends Resource
                 TextEntry::make('name'),
                 TextEntry::make('slug'),
                 TextEntry::make('description'),
-                IconEntry::make('is_visible')
-                    ->label('Visibility'),
                 TextEntry::make('updated_at')
                     ->dateTime(),
             ])

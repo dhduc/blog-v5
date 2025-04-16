@@ -29,6 +29,8 @@ class HomeController extends Controller
         });
 
         $latest = Post::select('*')
+            ->published()
+            ->with(['category'])
             ->paginate(12);
 
         return view('home', compact('latest'));

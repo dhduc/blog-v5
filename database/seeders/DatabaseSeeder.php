@@ -24,6 +24,11 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'admin@gmail.com',
+            'about' => "Hi! I'm from the South of France and I've been a self-taught web developer since 2006. When I started learning PHP and JavaScript, PHP 4 was still widely used, Internet Explorer 6 ruled the world, and we used DHTML to add falling snow on websites.
+
+Để ủng hộ blog ra các bài viết tốt nhất, hãy sử dụng link giới thiệu của tác giả trong các bài viết, đây là cách giúp tác giả có thêm động lực viết bài.
+
+Vui lòng không copy, sao chép nội dung của các bài viết dưới mọi hình thức."
         ]);
 
         // Blog
@@ -37,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Flexible caching in Laravel made super easy',
             'slug' => 'caching-in-laravel',
             'desc' => 'Explore Laravel’s new Cache::flexible() method for balancing data freshness and performance in high-traffic applications.',
-            'content' => "",
+            'content' => "content",
             'published_at' => now()->subDay(),
             'category_id' => $category->id
         ]);
@@ -45,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'title' => "Demystifying Artisan: Laravel's magical command tool",
             'slug' => 'artisan-laravel',
             'desc' => 'Artisan is Laravel’s command-line interface that can help you streamline your development process. Let’s explore its power and how it can boost your productivity.',
-            'content' => '',
+            'content' => 'content',
             'published_at' => now()->subDay(),
             'category_id' => $category->id
         ]);
@@ -53,7 +58,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'A guide to architecture testing presets in Pest 3',
             'slug' => 'testing-presets',
             'desc' => 'Discover how Pest 3 simplifies architecture testing with pre-configured presets, making it effortless to enforce best practices and maintain code quality in your projects.',
-            'content' => '',
+            'content' => 'content',
             'published_at' => now()->subDay(),
             'category_id' => $category->id
         ]);

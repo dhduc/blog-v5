@@ -7,8 +7,8 @@
         wire:navigate
         href="{{ route('home') }}"
         @class([
-            'transition-colors hover:text-blue-600',
-            'text-blue-600' => request()->routeIs('home'),
+            'transition-colors hover:text-primary-600',
+            'text-primary-600' => request()->routeIs('home'),
         ])"
     >
         @if (request()->routeIs('home'))
@@ -24,8 +24,8 @@
         wire:navigate
         href="{{ route('posts.index') }}"
         @class([
-            'transition-colors hover:text-blue-600',
-            'text-blue-600' => request()->routeIs('posts.index'),
+            'transition-colors hover:text-primary-600',
+            'text-primary-600' => request()->routeIs('posts.index'),
         ])"
     >
         @if (request()->routeIs('posts.index'))
@@ -41,8 +41,8 @@
         wire:navigate
         href="{{ route('links.index') }}"
         @class([
-            'transition-colors hover:text-blue-600',
-            'text-blue-600' => request()->routeIs('links.index'),
+            'transition-colors hover:text-primary-600',
+            'text-primary-600' => request()->routeIs('links.index'),
         ])"
     >
         @if (request()->routeIs('links.index'))
@@ -54,34 +54,15 @@
         Dự án
     </a>
 
-    <x-dropdown>
-        <x-slot:btn>
-            <x-heroicon-o-ellipsis-horizontal
-                class="mx-auto transition-transform size-6 md:size-7"
-                x-bind:class="{ 'rotate-90': open }"
-            />
-            More
-        </x-slot>
+    <a
+        href="{{ route('home') }}#about"
+        @class([
+            'transition-colors hover:text-primary-600',
+        ])"
+        >
+        <x-heroicon-o-user-circle class="mx-auto size-6 md:size-7" />
 
-        <x-slot:items>
-            <x-dropdown.item href="{{ route('home') }}#about">
-                <x-heroicon-o-question-mark-circle class="size-4" />
-                About me
-            </x-dropdown.item>
+        About me
+    </a>
 
-            <x-dropdown.divider>
-                Follow me
-            </x-dropdown.divider>
-
-            <x-dropdown.item href="https://www.linkedin.com/in/benjamincrozat" target="_blank">
-                <x-iconoir-facebook class="size-4" />
-                Facebook
-            </x-dropdown.item>
-
-            <x-dropdown.item href="https://x.com/benjamincrozat" target="_blank">
-                <x-iconoir-x class="size-4" />
-                X (Twitter)
-            </x-dropdown.item>
-        </x-slot>
-    </x-dropdown>
 </nav>

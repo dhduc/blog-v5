@@ -14,6 +14,11 @@
     </x-breadcrumbs>
 
     <article class="mt-6 md:mt-8">
+
+        <h1 class="container mt-4 font-medium tracking-tight text-center text-black md:mt-8 text-balance text-3xl/none sm:text-4xl/none md:text-5xl/none lg:text-6xl/none">
+            {{ $post['title'] }}
+        </h1>
+
         @if (! empty($post['categories']))
             <div class="flex justify-center gap-2 mt-12 md:mt-16">
                 @foreach ($post['categories'] as $category)
@@ -23,10 +28,6 @@
                 @endforeach
             </div>
         @endif
-
-        <h1 class="container mt-4 font-medium tracking-tight text-center text-black md:mt-8 text-balance text-3xl/none sm:text-4xl/none md:text-5xl/none lg:text-6xl/none">
-            {{ $post['title'] }}
-        </h1>
 
         <div class="container mt-6 md:mt-8 lg:max-w-screen-md">
 

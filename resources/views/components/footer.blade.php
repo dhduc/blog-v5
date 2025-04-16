@@ -89,7 +89,9 @@
 </div>
 <script>
     // Get the button
-    const backToTopBtn = document.getElementById("backToTopBtn");
+    if (! window.backToTopBtn) {
+        let backToTopBtn = document.getElementById("backToTopBtn");
+    }
 
     // Show/hide the button based on scroll position
     window.onscroll = function () {

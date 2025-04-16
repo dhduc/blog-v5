@@ -18,6 +18,11 @@ export default {
             fontFamily: {
                 sans: ['Outfit', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'primary': 'blue',
+                'primary-500': '#3B82F6',
+                'primary-600': '#2563EB',
+            },
         },
 
         screens: {

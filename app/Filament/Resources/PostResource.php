@@ -28,7 +28,7 @@ class PostResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
     protected static ?int $navigationSort = 0;
 
@@ -56,10 +56,6 @@ class PostResource extends Resource
                             ->required()
                             ->columnSpan('full'),
 
-                        Forms\Components\MarkdownEditor::make('content')
-                            ->required()
-                            ->columnSpan('full'),
-
 
 
                         Forms\Components\Select::make('category_id')
@@ -74,6 +70,10 @@ class PostResource extends Resource
                             ->label('Modified Date'),
 
                         SpatieTagsInput::make('tags'),
+
+                        Forms\Components\MarkdownEditor::make('content')
+                            ->required()
+                            ->columnSpan('full'),
                     ])
                     ->columns(2),
 

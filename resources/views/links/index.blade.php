@@ -6,7 +6,7 @@
     @if ($links->currentPage() === 1)
         <div class="container mt-16 mb-10 text-center text-black">
             <h1 class="font-bold tracking-tight text-black md:text-3xl lg:text-5xl text-balance">
-                <span class="text-blue-600">Cập nhật</span> từ cộng đồng
+                <span class="text-primary-600">Cập nhật</span> từ cộng đồng
             </h1>
         </div>
     @endif

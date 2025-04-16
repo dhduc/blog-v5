@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->profile()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -45,6 +46,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Homepage')
                     ->url(url('/'), shouldOpenInNewTab: true)
                     ->icon('heroicon-o-home')
+                    ->group('Others')
                     ->sort(10)
             ])
             ->middleware([
