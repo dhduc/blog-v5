@@ -13,7 +13,7 @@
         </a>
     @endif
 
-    @if (! empty($post['category']))
+    @if (! empty($post['is_show_category']))
         <div class="flex gap-2 mt-6">
             <div class="px-2 py-1 text-xs font-medium uppercase border rounded">
                 {{ $post['category']['name'] }}

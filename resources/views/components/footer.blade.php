@@ -38,7 +38,7 @@
                             Bài viết</a>
                         <a wire:navigate href="{{ route('links.index') }}" class="font-medium inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
                             Dự án</a>
-                        <a href="{{ route('home') }}#about" class="font-medium inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
+                        <a wire:navigate href="{{ route('about') }}" class="font-medium inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
                             Giới thiệu</a>
                         <a href="mailto:hello@benjamincrozat.com" class="font-medium inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
                             Liên hệ</a>

@@ -55,12 +55,18 @@
     </a>
 
     <a
-        href="{{ route('home') }}#about"
+        wire:navigate
+        href="{{ route('about') }}"
         @class([
             'transition-colors hover:text-primary-600',
+            'text-primary-600' => request()->routeIs('about'),
         ])"
         >
-        <x-heroicon-o-user-circle class="mx-auto size-6 md:size-7" />
+        @if (request()->routeIs('about'))
+            <x-heroicon-s-user-circle class="mx-auto size-6 md:size-7" />
+        @else
+            <x-heroicon-o-user-circle class="mx-auto size-6 md:size-7" />
+        @endif
 
         About me
     </a>
