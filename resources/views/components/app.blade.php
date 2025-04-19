@@ -1,12 +1,12 @@
 @props([
     'canonical' => url()->current(),
-    'description' => '',
+    'description' => setting('desc'),
     'image' => '',
-    'title' => config('app.name'),
+    'title' => setting('title'),
 ])
 
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
+<html lang="{{ setting('language') }}" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />

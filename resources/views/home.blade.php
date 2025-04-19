@@ -1,11 +1,11 @@
 <x-app>
     <div class="container mt-8 text-center">
         <div class="font-bold tracking-tight text-black text-4xl/none md:text-5xl lg:text-7xl text-balance">
-            AWS for PHP developers
+            {{ setting('heading') }}
         </div>
 
         <div class="max-w-screen-xl mt-5 leading-tight text-black/75 text-lg/tight sm:text-xl/tight md:text-2xl/tight md:mt-8 lg:text-3xl text-balance">
-            Learn enough AWS knowledge and skills for PHP professtional projects
+            {{ setting('desc') }}
         </div>
 
     </div>
@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="text-center sm:text-xl mt-7">
-            If you like my blog, please check out these development/education-centric products that will help you as a developer without a doubt.
+            {{ setting('intro') }}
         </div>
     </x-section>
 

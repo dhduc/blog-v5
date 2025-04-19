@@ -20,7 +20,7 @@ $submit = function () {
         <div class="max-w-md">
             <h2 class="text-2xl font-bold md:text-3xl md:leading-tight dark:text-white">Subscribe</h2>
             <p class="mt-3 text-gray-600 dark:text-neutral-400">
-                Subscribe and start making the most of every engagement.
+                {{ setting('subscribe') }}
             </p>
         </div>
 
