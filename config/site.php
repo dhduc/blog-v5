@@ -51,6 +51,10 @@ Vui lòng không copy, sao chép nội dung của các bài viết dưới mọi
     'per_page' => '12',
     'date_format' => 'd/m/Y',
 
+    'languages' => [
+        'subscribe' => []
+    ],
+
     // navigation
     'nav' => [
         [
